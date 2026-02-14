@@ -6,13 +6,8 @@
 
 using namespace cadmium;
 
-enum ChemicalFeedPumpPhase {
-    kOn,
-    kOff
-}
-
 struct ChemicalFeedPumpState {
-    enum ChemicalFeedPumpPhase phase;
+    enum Phase phase;
     double chemicalFeedRate;
 
     explicit ChemicalFeedPumpState(): phase(kOff), chemicalFeedRate(0.1) {}
@@ -29,7 +24,7 @@ public:
     Port<int> commandIn;
     Port<double> chemicalOut;
 
-    ChemicalFeedPump(const std::string id): 
+    ChemicalFeedPump(const std::string id): Atomic<ChemicalFeedPumpState>(id, ChemicalFeedPumpState()) {
         commandIn = addInPort<int>("commandIn");
         chemicalOut = addOutPort<double>("chemicalOut");
     }
@@ -48,7 +43,7 @@ public:
     }
     
     void output(const ChemicalFeedPumpState& state) const override {
-        if (state.phase = kOn) {
+        if (state.phase == kOn) {
             chemicalOut->addMessage(state.chemicalFeedRate);
         }
     }

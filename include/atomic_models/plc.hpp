@@ -7,13 +7,8 @@
 
 using namespace cadmium;
 
-enum PLCPhase {
-    kIdle,
-    kBusy
-};
-
 struct PLCState {
-    enum PLCPhase phase;
+    enum Phase phase;
     double analysis;
     double safetyLimit;
     double tolerance;

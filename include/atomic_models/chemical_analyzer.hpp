@@ -6,14 +6,9 @@
 
 using namespace cadmium;
 
-enum ChemicalAnalyzerPhase {
-    kIdle,
-    kAnalyzing
-}
-
 struct ChemicalAnalyzerState {
     double sigma;
-    enum ChemicalAnalyzerPhase phase;
+    enum Phase phase;
     double analysisTime;
     double sample;
 
@@ -30,7 +25,7 @@ class ChemicalAnalyzer : public Atomic<ChemicalAnalyzerState> {
 public:
     Port<double> sampleIn, analysisOut;
 
-    ChemicalAnalyzer(const std::string id): 
+    ChemicalAnalyzer(const std::string id): Atomic<ChemicalAnalyzerState>(id, ChemicalAnalyzerState()) {
         sampleIn = addInPort<double>("sampleIn");
         analysisOut = addOutPort<double>("analysisOut");
     }

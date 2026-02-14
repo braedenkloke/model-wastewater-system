@@ -3,4 +3,12 @@
 
 const int kInfinity = 2147483647; // Maximum value for an integer, i.e., infinity
 
+enum Phase {
+    kIdle,
+    kBusy,
+    kAnalyzing,
+    kOn,
+    kOff
+};
+
 #endif // CONSTANTS_HPP

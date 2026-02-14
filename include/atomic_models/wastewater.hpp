@@ -8,9 +8,9 @@ using namespace cadmium;
 struct WastewaterState {
     double sigma;
     double pH_Level;
-    double pH_Increaserate;
+    double pH_IncreaseRate;
 
-    explicit WastewaterState(): sigma(1); pH_Level(9), pH_IncreaseRate(0.1) {}
+    explicit WastewaterState(): sigma(1), pH_Level(9), pH_IncreaseRate(0.1) {}
 };
 
 #ifndef NO_LOGGING
@@ -23,7 +23,7 @@ class Wastewater : public Atomic<WastewaterState> {
 public:
     Port<double> chemicalIn, sampleOut;
 
-    Wastewater(const std::string id): 
+    Wastewater(const std::string id): Atomic<WastewaterState>(id, WastewaterState()) {
         chemicalIn = addInPort<double>("chemicalIn");
         sampleOut = addOutPort<double>("sampleOut");
     }
