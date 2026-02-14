@@ -1,3 +1,9 @@
-add_executable(main.cpp main.cpp)
-target_include_directories(main.cpp PRIVATE "." "include" $ENV{CADMIUM})
-target_compile_options(main.cpp PUBLIC -std=gnu++2b)
+set(TESTS
+plc_test
+)
+
+foreach(test IN LISTS TESTS)
+    add_executable(${test} ${test}.cpp)
+    target_include_directories(${test} PRIVATE "." "include" $ENV{CADMIUM})
+    target_compile_options(${test} PUBLIC -std=gnu++2b)
+endforeach()
