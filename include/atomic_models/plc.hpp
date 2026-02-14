@@ -3,8 +3,7 @@
 
 #include "cadmium/modeling/devs/atomic.hpp"
 
-#include "../include/atomic_models/plc.hpp"
-#include "../include/constants.hpp"
+#include "../constants.hpp"
 
 using namespace cadmium;
 
