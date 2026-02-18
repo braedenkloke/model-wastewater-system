@@ -13,6 +13,8 @@ Execute any of the experiments and tests in the `bin` folder, for example
 ./bin/wastewater_system_combined_attacks
 ```
 
+For more details about the project, reference the [report](Report.pdf).
+
 ## Requirements
 
 * [Cadmium v2](https://github.com/Sasisekhar/cadmium_v2) 
