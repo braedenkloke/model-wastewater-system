@@ -3,12 +3,12 @@
 Inspired by this [paper](https://ieeexplore.ieee.org/abstract/document/10314173), this project is a [DEVS](https://en.wikipedia.org/wiki/DEVS) model and simulation of single and combined attacks on an industrial wastewater system.
 
 ## Usage
-To build the simulation, run
+To build all experiments and tests, run
 ```
 source build.sh
 ```
 
-Execute any of the experiments and tests in bin, for example
+Execute any of the experiments and tests in the `bin` folder, for example
 ```
 ./bin/wastewater_system_combined_attacks
 ```
