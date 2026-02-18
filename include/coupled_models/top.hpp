@@ -12,12 +12,12 @@ using namespace cadmium;
 
 struct TopCoupled : public Coupled {
 
-    TopCoupled(const std::string& id): Coupled(id) {
+    TopCoupled(const std::string& id, double spoofAttackerIdleTime, double tamperBias): Coupled(id) {
 
         auto pump = addComponent<ChemicalFeedPump>("ChemicalFeedPump");
         auto wastewater = addComponent<Wastewater>("Wastewater");
         auto analyzer = addComponent<ChemicalAnalyzer>("ChemicalAnalyzer");
-        auto plc = addComponent<VulnerablePLCCoupled>("VulnerablePLC");
+        auto plc = addComponent<VulnerablePLCCoupled>("VulnerablePLC", spoofAttackerIdleTime, tamperBias);
 
         addCoupling(pump->chemicalOut, wastewater->chemicalIn);
         addCoupling(wastewater->sampleOut, analyzer->sampleIn);

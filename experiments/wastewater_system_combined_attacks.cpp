@@ -7,10 +7,10 @@
 using namespace cadmium;
 
 int main(int argc, char* argv[]) {
-    double spoofAttackerIdleTime = kInfinity;
-    double tamperBias = 0.0;
+    double spoofAttackerIdleTime = 1.0;
+    double tamperBias = 0.6;
 
-    auto model = std::make_shared<TopCoupled>("Wastewater System No Attacks", spoofAttackerIdleTime, tamperBias);
+    auto model = std::make_shared<TopCoupled>("Wastewater System Under Combined Attacks", spoofAttackerIdleTime, tamperBias);
     auto rootCoordinator = cadmium::RootCoordinator(model);
 
     rootCoordinator.setLogger<STDOUTLogger>(",");

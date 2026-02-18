@@ -1,5 +1,8 @@
 set(EXPERIMENTS
 wastewater_system_no_attacks
+wastewater_system_spoof_attack
+wastewater_system_tamper_attack
+wastewater_system_combined_attacks
 )
 
 foreach(experiment IN LISTS EXPERIMENTS)

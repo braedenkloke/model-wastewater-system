@@ -1,5 +1,6 @@
 set(TESTS
 plc_test
+tamper_attacker_test
 )
 
 foreach(test IN LISTS TESTS)

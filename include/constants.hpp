@@ -8,7 +8,9 @@ enum Phase {
     kBusy,
     kAnalyzing,
     kOn,
-    kOff
+    kOff,
+    kPreparing,
+    kAttacking
 };
 
 #endif // CONSTANTS_HPP

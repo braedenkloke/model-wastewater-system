@@ -10,7 +10,7 @@ struct ChemicalFeedPumpState {
     enum Phase phase;
     double chemicalFeedRate;
 
-    explicit ChemicalFeedPumpState(): phase(kOff), chemicalFeedRate(0.1) {}
+    explicit ChemicalFeedPumpState(): phase(kOff), chemicalFeedRate(0.2) {}
 };
 
 #ifndef NO_LOGGING
