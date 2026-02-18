@@ -1,51 +1,22 @@
 # Wastewater System Model and Simulation
-[DEVS](https://en.wikipedia.org/wiki/DEVS) model and simulation of single and combined attacks on an industrial wastewater system.
 
-## Motivation
+Inspired by this [paper](https://ieeexplore.ieee.org/abstract/document/10314173), this project is a [DEVS](https://en.wikipedia.org/wiki/DEVS) model and simulation of single and combined attacks on an industrial wastewater system.
 
 ## Usage
-To execute the simulation, run
+To build the simulation, run
 ```
-source build_sim.sh
-./bin/campus-evacuation | grep "id=1,"
-```
-
-Your output should look similar to this
-```
-time,model_id,model_name,port_name,data
-0,30,P3,exit,Vehicle{src=P3,id=1,dest=}
-0,21,P3 & Raven Rd,out2,Vehicle{src=P3,id=1,dest=P3 & Raven Rd to Bronson Ave & Raven Rd}
-9,8,P3 & Raven Rd to Bronson Ave & Raven Rd,exit,Vehicle{src=P3,id=1,dest=P3 & Raven Rd to Bronson Ave & Raven Rd}
+source build.sh
 ```
 
-To reference the simulation options, run 
+Execute any of the experiments and tests in bin, for example
 ```
-./bin/campus-evacuation --help
-```
-
-To execute all scenarios as a batch, run
-```
-source run_scenarios.sh
+./bin/wastewater_system_combined_attacks
 ```
 
-## Install
-Instructions for installing this project's dependencies.
+## Requirements
 
-### Cadmium
-Install Cadmium by running a [bootstrap script](https://github.com/braedenkloke/scripts-devssim),
-or by following the instructions in the [Cadmium Installation Manual](https://devssim.carleton.ca/manuals/installation/).
+* [Cadmium v2](https://github.com/Sasisekhar/cadmium_v2) 
 
-Next, move this project folder to your Cadmium projects folder as such
-```
-cadmium-projects
-|--cadmium_v2
-|--model-campus-evacuation
-```
-
-Lastly, ensure you have your `CADMIUM` environment variable is set to your `cadmium_v2/include` directory
-```
-printenv | grep CADMIUM
-```
 
 ## Further Reading
 - [Cadmium and the DEVSsim Server](https://devssim.carleton.ca/): Two tools for discrete-event modeling and simulation.
