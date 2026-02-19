@@ -35,7 +35,7 @@ public:
             state.phase = kIdle;
             state.sigma = kInfinity;
         } else {
-
+            state.sigma = state.analysisTime;
         }
     }
 
@@ -46,7 +46,6 @@ public:
             state.sigma = state.analysisTime;
         } else {
             state.sigma -= e;
-
         }
     }
     
@@ -58,11 +57,6 @@ public:
 
     [[nodiscard]] double timeAdvance(const ChemicalAnalyzerState& state) const override {     
         return state.sigma;
-        if (state.phase == kAnalyzing) {
-            return state.analysisTime;
-        } else {
-            return kInfinity;
-        }
     }
 };
 
